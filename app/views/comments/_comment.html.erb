@@ -1,0 +1,18 @@
+
+
+
+ <% obj.each do |comment| %>
+ 
+
+
+
+<p><%= comment.comment %>
+
+Commented by  User <%= comment.user.username %>
+</p>
+
+
+
+</tr>
+
+<% end %>
