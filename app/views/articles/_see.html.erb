@@ -1,0 +1,30 @@
+<h2 align="center">Title: <%= obj.title %></h2>
+
+<div class="well col-xs-8 col-xs-offset-2">
+
+<h4 class="center description"><strong>Description:</strong></h4>
+
+<hr>
+
+<%= simple_format(obj.description) %>
+<div  style="width:150px; height:150px">
+
+<%= link_to image_tag(obj.image ,style:"width:150px; height:150px" ), obj.image if obj.image.attached?  %>
+
+</div>
+<div class="article-actions">
+
+<%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+ <%= link_to "Delete this article", article_path(@article), method: :delete,
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  ,class: "btn btn-xs btn-danger"  %>
+<%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+
+</div>
+<%= link_to 'View PDF', article_pdf_path , target: :_blank %>
+<%= render 'comments/comment', obj: obj.comments %>
+<%= render "comments/form", comment: @article.comments.build%>
+
+
+
+ 
+</div>
