@@ -6,19 +6,15 @@ class ApplicationController < ActionController::Base
     
 
     def logged_in?
-
         !!current_user
-        
     end
 
     def require_user
-
         if !logged_in?
             respond_to do |format|
                 format.html { redirect_to root_path, notice: "You must be Logged In to perform that action" }  
             end     
          end 
-
     end
     
 end

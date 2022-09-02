@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
         @article.user= User.find(session[:user_id])
         respond_to do |format|
         if @article.save
-            format.html { redirect_to article_path(@article), notice: "Atricle was successfully created." }  
+            format.html { redirect_to user_article_path(current_user,@article), notice: "Atricle was successfully created." }  
           else
             format.html { render :new, status: :unprocessable_entity }
           end       
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
        
         respond_to do |format|
             if @article.update(article_params)
-                format.html { redirect_to article_path(@article), notice: "Atricle was successfully Updated." }  
+                format.html { redirect_to user_article_path(current_user,@article), notice: "Atricle was successfully Updated." }  
               else
                 format.html { render :new, status: :unprocessable_entity }
               end       
@@ -38,8 +38,6 @@ class ArticlesController < ApplicationController
 
 
     def show
-     
-        session[:article_id] = @article.id
     end
     def pdf
         @article= Article.find(params[:id])
@@ -69,7 +67,7 @@ class ArticlesController < ApplicationController
        
         @article.destroy
         flash[:notice]="Article was successfully deleted"
-        redirect_to articles_path
+        redirect_to user_articles_path
     end
 
     private

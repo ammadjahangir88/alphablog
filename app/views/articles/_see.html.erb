@@ -14,18 +14,19 @@
 </div>
 <div class="article-actions">
 <% if logged_in? && (current_user == @article.user || current_user.admin? ) %>
-<%= link_to "Edit this article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
- <%= link_to "Delete this article", article_path(@article), method: :delete,
+<%= link_to "Edit this article", edit_user_article_path(current_user,@article), class: "btn btn-xs btn-primary" %>
+ <%= link_to "Delete this article", user_article_path(current_user,@article), method: :delete,
               data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  ,class: "btn btn-xs btn-danger"  %>
 
 <% end %>
-<%= link_to "View all articles", articles_path, class: "btn btn-xs btn-success" %>
+<%= link_to "View all articles", user_articles_path(current_user), class: "btn btn-xs btn-success" %>
 
 </div>
 <%= link_to 'View PDF', article_pdf_path , target: :_blank %>
 
 <%= render 'comments/comment', obj: obj.comments %>
-<%= render "comments/form", comment: @article.comments.build%>
+<%= render "comments/form", comment: @article.comments.build %>
+
 
 
 

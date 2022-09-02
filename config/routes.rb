@@ -4,13 +4,23 @@ Rails.application.routes.draw do
   root  'welcome#home'
   get 'articles/pdf/:id' , to: 'articles#pdf', as: 'article_pdf'
   get 'welcome', to: 'welcome#about'
-  resources :articles
+ 
   
   get 'signup', to: 'users#new'
 
-  resources :users, except: [:new]
-  resources :comments
 
+  resources  :users, except: [:new] do
+    resources :articles  do
+      resources :comments , only: [:new, :create]
+    end
+  end
+  
+  
+ 
+  
+  
+ 
+  
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
@@ -18,4 +28,7 @@ Rails.application.routes.draw do
   get '/search' , to: 'articles#search'
   # Defines the root path route ("/")
   # root "articles#index"
+
+  
+
 end

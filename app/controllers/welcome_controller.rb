@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
 
     def home
-        redirect_to articles_path if logged_in?
+        redirect_to user_articles_path(current_user) if logged_in?
     end
 
     def about

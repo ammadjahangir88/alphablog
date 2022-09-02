@@ -7,16 +7,14 @@ class CommentsController < ApplicationController
 
     def index
         @comments=Comment.all
-
     end
     def create
-    
     @comments=Comment.new(comment_params)
-    @comments.user= User.find(session[:user_id])
-    @comments.article_id=session[:article_id]
+    @comments.user= current_user
+    @comments.article= Article.find(params[:article_id])
     respond_to do |format|
     if @comments.save
-        format.html { redirect_to @comments.article, notice: "Comment Created" }  
+        format.html { redirect_to user_article_path(current_user,@comments.article), notice: "Comment Created" }  
       else
         format.html { render :new, status: :unprocessable_entity }
       end       
