@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
         @article.user= User.find(session[:user_id])
         respond_to do |format|
         if @article.save
+            CrudNotificationMailer.create_notification(@article).
+            deliver_now
             format.html { redirect_to user_article_path(current_user,@article), notice: "Atricle was successfully created." }  
           else
             format.html { render :new, status: :unprocessable_entity }

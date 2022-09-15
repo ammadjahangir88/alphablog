@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to user_path(@user), notice: "Welcome to Alphablog #{@user.username}" }
+        format.html { redirect_to @user, notice: "Welcome to Alphablog #{@user.username}" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -60,10 +60,10 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    @user = current_user
+    @user = User.find(params[:id])
+ 
     if current_user != @user and !current_user.admin?
       flash[:danger] = "You can only edit your own account"
-
       redirect_to root_path
     end
   end

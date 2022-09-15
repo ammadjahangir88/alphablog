@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_053609) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_063349) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -63,6 +63,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_053609) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "article_id"
+  end
+
+  create_table "polycomments", force: :cascade do |t|
+    t.text "context"
+    t.string "commentable_type", null: false
+    t.integer "commentable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_polycomments_on_commentable"
   end
 
   create_table "users", force: :cascade do |t|
