@@ -31,6 +31,8 @@ class ArticlesController < ApplicationController
        
         respond_to do |format|
             if @article.update(article_params)
+                CrudNotificationMailer.update_notification(@article).
+                 deliver_now
                 format.html { redirect_to user_article_path(current_user,@article), notice: "Atricle was successfully Updated." }  
               else
                 format.html { render :new, status: :unprocessable_entity }
@@ -91,7 +93,7 @@ class ArticlesController < ApplicationController
         
         end
         
-    end
+    end 
 
 
 
