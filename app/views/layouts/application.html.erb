@@ -17,6 +17,7 @@
  
 
   <body>
+<<<<<<< HEAD
   <%= render 'layouts/navigation'%>
   <%= render 'layouts/messages'%>
     <div class="container">
@@ -24,6 +25,16 @@
     </div>
     <%= render 'layouts/footer'%>
   </body>
+=======
+  <%= render "layouts/navigation" %>
+  <%= render "layouts/messages" %>
+    <div class="container">
+    <%= yield %>
+    </div>
+    <%= render "layouts/footer" %>
+  </body>
+  <%= debug(params) if Rails.env.development? %>
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
   
   </body>
 </html>

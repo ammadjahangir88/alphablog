@@ -20,6 +20,16 @@
 
 <li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
 
+<<<<<<< HEAD
+=======
+<% if logged_in? and current_user.admin? %>
+
+<li><%= link_to "Delete this User", user_path(user), method: :delete,
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  ,class: "btn btn-xs btn-danger"  %>   </li>
+
+<% end %>
+
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
 </div>
 
 </div>

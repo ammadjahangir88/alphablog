@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <%= form_with(model: comment) do |form| %>
+=======
+<%= form_with(model: [current_user,@article,comment]) do |form| %>
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
    
  
     <%= form.hidden_field :article_id %>
@@ -9,4 +13,8 @@
     <div class="actions">
      <%= form.submit %>
     </div>
+<<<<<<< HEAD
    <% end %>
+=======
+<% end %>
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a

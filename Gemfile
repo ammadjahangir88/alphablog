@@ -51,6 +51,10 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+<<<<<<< HEAD
+=======
+  gem "letter_opener"
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
 end
 
 group :development do
@@ -74,3 +78,8 @@ end
 
 
 gem "prawn", "~> 2.4"
+<<<<<<< HEAD
+=======
+
+gem 'sassc-rails'
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a

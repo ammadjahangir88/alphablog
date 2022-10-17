@@ -107,6 +107,13 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+<<<<<<< HEAD
+=======
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -136,6 +143,11 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-arm64-darwin)
       racc (~> 1.4)
+<<<<<<< HEAD
+=======
+    nokogiri (1.13.8-x86_64-linux)
+      racc (~> 1.4)
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
     pdf-core (0.9.0)
     prawn (2.4.0)
       pdf-core (~> 0.9.0)
@@ -181,6 +193,17 @@ GEM
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+<<<<<<< HEAD
+=======
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -198,6 +221,10 @@ GEM
       railties (>= 6.0.0)
     strscan (3.0.4)
     thor (1.2.1)
+<<<<<<< HEAD
+=======
+    tilt (2.0.11)
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
     timeout (0.3.0)
     ttfunk (1.7.0)
     turbo-rails (1.1.1)
@@ -225,6 +252,10 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+<<<<<<< HEAD
+=======
+  x86_64-linux
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
 
 DEPENDENCIES
   bcrypt (~> 3.1, >= 3.1.12)
@@ -234,9 +265,17 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+<<<<<<< HEAD
   prawn (~> 2.4)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+=======
+  letter_opener
+  prawn (~> 2.4)
+  puma (~> 5.0)
+  rails (~> 7.0.3, >= 7.0.3.1)
+  sassc-rails
+>>>>>>> 40b5d358eed49f362d44871baafb3f25321a8c4a
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
